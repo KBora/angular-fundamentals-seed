@@ -32,6 +32,9 @@ interface Passenger {
             Check in date: 
             {{ passenger.checkedIn ? (passenger.checkedInDate | date: 'yMMMMd' | uppercase )  : 'Not checked in' }}
           </div> 
+          <div class="children">
+            Children: {{ passenger.children?.length }}
+          </div>
         </li>
       </ul>
   
