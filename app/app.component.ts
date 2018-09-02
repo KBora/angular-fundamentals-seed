@@ -23,7 +23,8 @@ interface Passenger {
             {{ i }}: {{ passenger.fullname }}
           <p>{{ passenger | json }} </p>
           <div class="date">
-            Check in date: {{ passenger.checkedInDate | date: 'yMMMMd' }}
+            Check in date: 
+            {{ passenger.checkedIn ? (passenger.checkedInDate | date: 'yMMMMd' | uppercase )  : 'Not checked in' }}
           </div> 
         </li>
       </ul>
