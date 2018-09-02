@@ -14,14 +14,17 @@ interface Passenger {
     <div class="app">
       <h3>Airline Passengers</h3>
       <ul>
-        <li *ngFor="let p of passengers; let i = index;">
+        <li *ngFor="let passenger of passengers; let i = index;">
           <span 
             class="status"
-            [class.checked-in]="p.checkedIn"
+            [class.checked-in]="passenger.checkedIn"
             >
           </span>
-            {{ i }}: {{ p.fullname }}
-          <p>{{ p | json }} </p>
+            {{ i }}: {{ passenger.fullname }}
+          <p>{{ passenger | json }} </p>
+          <div class="date">
+            Check in date: {{ passenger.checkedInDate | date: 'yMMMMd' }}
+          </div> 
         </li>
       </ul>
   
