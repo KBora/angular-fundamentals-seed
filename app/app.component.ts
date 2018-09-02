@@ -11,10 +11,12 @@ import { Component } from '@angular/core';
         (input)="handleChange($event.target.value)"
       >
 
-    <div *ngIf="name.length > 2">
-      Searching for ... {{ name }}
-    </div>
-    
+    <template [ngIf]="name.length > 2">
+      <div>
+        Searching for ... {{ name }}
+      </div>
+    </template>
+
     </div>   
   `
 })
