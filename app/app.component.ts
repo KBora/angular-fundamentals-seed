@@ -11,7 +11,10 @@ import { Component } from '@angular/core';
         (input)="handleChange($event.target.value)"
       >
 
-  <div>{{ name }}</div>
+    <div *ngIf="name.length > 2">
+      Searching for ... {{ name }}
+    </div>
+    
     </div>   
   `
 })
