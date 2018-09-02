@@ -21,6 +21,7 @@ interface Passenger {
             >
           </span>
             {{ i }}: {{ p.fullname }}
+          <p>{{ p | json }} </p>
         </li>
       </ul>
   
