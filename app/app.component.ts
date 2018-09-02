@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 interface Passenger {
   id: number,
   fullname: string,
-  checkedIn: boolean
+  checkedIn: boolean,
+  checkedInDate: number | null
 }
 
 @Component({
@@ -22,44 +23,7 @@ interface Passenger {
             {{ i }}: {{ p.fullname }}
         </li>
       </ul>
-      <hr>
-      <ul>
-        <li *ngFor="let p of passengers; let i = index;">
-          <span 
-            class="status"
-            [ngClass]="{ 
-              'checked-in': p.checkedIn,
-              'checked-out': !p.checkedIn
-            }"
-            >
-          </span>
-            {{ i }}: {{ p.fullname }}
-        </li>
-      </ul>
-      <hr>
-      <ul>
-        <li *ngFor="let p of passengers; let i = index;">
-          <span 
-            class="status"
-            [style.backgroundColor]="(p.checkedIn ? 'green': 'red')"
-            >
-          </span>
-            {{ i }}: {{ p.fullname }}
-        </li>
-      </ul>
-      <hr>
-      <ul>
-        <li *ngFor="let p of passengers; let i = index;">
-          <span 
-            class="status"
-            [ngStyle]="{ 
-              backgroundColor: (p.checkedIn ? 'green': 'red')
-            }"
-            >
-          </span>
-            {{ i }}: {{ p.fullname }}
-        </li>
-      </ul>
+  
 
     </div>   
   `
@@ -68,22 +32,26 @@ export class AppComponent {
   passengers: Passenger[] = [ {
     id: 1,
     fullname: 'Stephen',
-    checkedIn: true
+    checkedIn: true,
+    checkedInDate: 1490742000000
   },
   {
     id: 2,
     fullname: 'Rose',
-    checkedIn: false
+    checkedIn: false,
+    checkedInDate: null
   },
   {
     id: 3,
     fullname: 'Bobby',
-    checkedIn: true
+    checkedIn: true,
+    checkedInDate: 1491606000000
   },
   {
     id: 4,
     fullname: 'Vishnu',
-    checkedIn: true
+    checkedIn: true,
+    checkedInDate: 1488412800000
   }
   ]
 }
