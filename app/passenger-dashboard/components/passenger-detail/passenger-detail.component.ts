@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
     selector: 'passenger-detail',
     template: `
         <div>
-            Count component
+            Detail component
         </div>
     `
 
