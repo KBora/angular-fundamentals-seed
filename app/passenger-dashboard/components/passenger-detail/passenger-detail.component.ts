@@ -1,11 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+import { Passenger } from '../../models/passenger.interface';
 
 @Component({
   
     selector: 'passenger-detail',
+    styleUrls: ['passenger-detail.component.scss'],
     template: `
         <div>
-            Detail component
+            <span 
+            class="status"
+            [class.checked-in]="detail.checkedIn"
+            >
+        </span>
+            {{ detail.fullname }}
+        <p>{{ passenger | json }} </p>
+        <div class="date">
+            Check in date: 
+            {{ detail.checkedIn ? (detail.checkedInDate | date: 'yMMMMd' | uppercase )  : 'Not checked in' }}
+        </div> 
+        <div class="children">
+            Children: {{ detail.children?.length || 0 }}
+        </div>
         </div>
     `
 
@@ -13,5 +29,7 @@ import { Component } from '@angular/core';
 })
 
 export class PassengerDetailComponent {
+    @Input()
+    detail: Passenger;
     constructor() {}
 }
