@@ -12,6 +12,7 @@ import { Passenger } from '../../models/passenger.interface';
               *ngFor="let passenger of passengers;"
               [detail]="passenger"
               ></passenger-detail>        
+
         </div>
     `
 })
