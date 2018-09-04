@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { Passenger } from '../../models/passenger.interface';
 
@@ -37,6 +37,10 @@ import { Passenger } from '../../models/passenger.interface';
             {{ editing ? 'Done' : 'Edit' }}
         </button>
         
+        <button (click)="onRemove()">
+            Remove
+        </button>
+
         </div>
     `
 
@@ -46,6 +50,13 @@ import { Passenger } from '../../models/passenger.interface';
 export class PassengerDetailComponent {
     @Input()
     detail: Passenger;
+
+    @Output()
+    edit: EventEmitter<any> = new EventEmitter();
+
+    @Output()
+    remove: EventEmitter<any> = new EventEmitter();
+
     editing: boolean = false;
 
     constructor() {}
@@ -55,6 +66,15 @@ export class PassengerDetailComponent {
     }
 
     toggleEdit() {
+        if (this.editing) {
+            this.edit.emit(this.detail);
+        }
         this.editing = !this.editing;
+    }
+
+    onRemove() {
+        // cannot remove the passenger via this component as it is dumb
+        // have to send a message back to parent
+        this.remove.emit(this.detail); // this.detail is the passenger we have locally edited/removed
     }
 }
