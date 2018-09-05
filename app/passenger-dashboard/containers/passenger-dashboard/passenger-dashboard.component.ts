@@ -64,12 +64,12 @@ export class PassengerDashboardComponent  implements OnInit {
 
       console.log(this.passengers);
 
-      // this.passengers = this.passengers.map((passenger: Passenger) => {
-      //   if(passenger.id === event.id) {
-      //     passenger = Object.assign({}, passenger, event);
-      //   }
-      //   return passenger;
-      // });
+      this.passengers = this.passengers.map((passenger: Passenger) => {
+        if(passenger.id === event.id) {
+          passenger = Object.assign({}, passenger, event);
+        }
+        return passenger;
+      });
       
       console.log(this.passengers);
     }
