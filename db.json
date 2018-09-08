@@ -5,42 +5,28 @@
       "fullname": "Stephen Hawking",
       "checkedIn": true,
       "checkedInDate": 1490742000000,
-      "children": null
+      "baggage": ""
     },
     {
       "id": 2,
       "fullname": "Rose",
       "checkedIn": false,
       "checkedInDate": null,
-      "children": [
-        {
-          "name": "Jessica",
-          "age": 11
-        },
-        {
-          "name": "Ted",
-          "age": 3
-        }
-      ]
+      "baggage": ""
     },
     {
       "id": 3,
       "fullname": "Bobby",
       "checkedIn": true,
       "checkedInDate": 1491606000000,
-      "children": null
+      "baggage": ""
     },
     {
       "id": 4,
       "fullname": "Kitty",
       "checkedIn": true,
       "checkedInDate": 1488412800000,
-      "children": [
-        {
-          "name": "Helen",
-          "age": 5
-        }
-      ]
+      "baggage": ""
     }
   ]
 }
