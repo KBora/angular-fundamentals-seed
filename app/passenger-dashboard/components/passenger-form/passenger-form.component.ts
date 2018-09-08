@@ -23,6 +23,29 @@ import { Passenger } from '../../models/passenger.interface';
                     name="id"                    
                     [ngModel]="detail?.id">
             </div> 
+
+            <div>
+                <label>
+                    <input
+                        type="radio"
+                        [value]="true"
+                        name="checkedIn"
+                        [ngModel]="detail?.checkedIn">
+                    Yes
+                </label>
+
+                <label>
+                    <input
+                    type="radio"
+                    [value]="false"
+                    name="checkedIn"
+                    [ngModel]="detail?.checkedIn">
+                    No
+                </label>
+            </div>
+
+
+
             {{ passengerForm.value | json }}       
            </form>
         </div>
