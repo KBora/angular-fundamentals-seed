@@ -2,7 +2,7 @@
   "passengers": [
     {
       "id": 1,
-      "fullname": "Stephen Harris",
+      "fullname": "Stephen Hawking",
       "checkedIn": true,
       "checkedInDate": 1490742000000,
       "children": null
@@ -39,18 +39,6 @@
         {
           "name": "Helen",
           "age": 5
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "fullname": "Maharishi",
-      "checkedIn": true,
-      "checkedInDate": 1488412800000,
-      "children": [
-        {
-          "name": "Jordi",
-          "age": 99
         }
       ]
     }

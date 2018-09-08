@@ -51,14 +51,22 @@ export class PassengerDashboardComponent  implements OnInit {
             }
             return passenger;
           });
-        });
+        });      
+    }
 
-      
-    }
     handleRemove(event: Passenger) {
-      console.log(event);
-      this.passengers = this.passengers.filter( (passenger: Passenger) => {
-        return passenger.id !== event.id
+      console.log('handleRemove');
+
+      this.passengerService
+        .removePassenger(event)
+        .subscribe((data: Passenger) => {          
+          this.passengers = this.passengers.filter( (passenger: Passenger) => {
+            return passenger.id !== event.id
+          });
       });
+
+     
     }
+
+
 }
