@@ -7,11 +7,23 @@ import { Passenger } from '../../models/passenger.interface';
     styleUrls: ['passenger-form.component.scss'],
     template: `
         <div>
-           <form>
-            Form!
+           <form #passengerForm="ngForm" novalidate>
+            {{ detail | json }}
             <div>
-                {{ detail | json }}
-            </div>           
+                Passenger name:
+                <input 
+                    type="text"
+                    name="fullname"                    
+                    [ngModel]="detail?.fullname">
+            </div>
+            <div>
+                Passenger ID:
+                <input 
+                    type="number"
+                    name="id"                    
+                    [ngModel]="detail?.id">
+            </div> 
+            {{ passengerForm.value | json }}       
            </form>
         </div>
     `
