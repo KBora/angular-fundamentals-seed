@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import { PassengerDashboardService } from '../../passenger-dashboard.service';
 
@@ -21,9 +22,17 @@ export class PassengerViewerComponent implements OnInit {
 
     passenger: Passenger;
 
-    constructor(private passengerService: PassengerDashboardService) {}
+    constructor(
+        private router: Router,
+        private route: ActivatedRoute,
+        private passengerService: PassengerDashboardService
+    ) {}
 
     ngOnInit() {
+        this.route.params
+        .subscribe((data: Params) => {
+            console.log(data);
+        })
         this.passengerService
             .getPassenger(1)
             .subscribe((data: Passenger) => this.passenger = data )
