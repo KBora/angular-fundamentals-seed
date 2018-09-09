@@ -1,11 +1,11 @@
 {
   "passengers": [
     {
+      "fullname": "Mickey Mouse",
       "id": 1,
-      "fullname": "Stephen Hawking",
       "checkedIn": true,
-      "checkedInDate": 1490742000000,
-      "baggage": "hand-only"
+      "baggage": "hand-only",
+      "checkedInDate": 1490742000000
     },
     {
       "id": 2,
