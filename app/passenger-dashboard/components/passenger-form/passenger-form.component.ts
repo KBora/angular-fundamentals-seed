@@ -21,7 +21,7 @@ import { Baggage } from '../../models/baggage.interface';
                 <div *ngIf="fullname.errors?.required && fullname.dirty" class="error">
                     Passenger name is required
                 </div>
-                {{ fullname.errors | json }}
+                
             </div>
             <div>
                 Passenger ID:
@@ -31,7 +31,9 @@ import { Baggage } from '../../models/baggage.interface';
                     required="true"
                     #id="ngModel"              
                     [ngModel]="detail?.id">
-                {{ id.errors | json }}
+                    <div *ngIf="id.errors?.required && id.dirty" class="error">
+                    ID is required
+                </div>
                 
             </div> 
 
