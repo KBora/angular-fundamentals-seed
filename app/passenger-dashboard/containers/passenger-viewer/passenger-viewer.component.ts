@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
+import 'rxjs/add/operator/switchMap';
+
 import { PassengerDashboardService } from '../../passenger-dashboard.service';
 
 import { Passenger } from '../../models/passenger.interface';
@@ -29,13 +31,14 @@ export class PassengerViewerComponent implements OnInit {
     ) {}
 
     ngOnInit() {
+
+        // switchMap reacts to values being emitted form the outer observable (change in URL)
+        // upon which it will trigger the inner observable () and emit the results of the inner one
+        // in other words, it 'switches' them
+        // it also cancels all previous events.  common use case: type aheads
         this.route.params
-        .subscribe((data: Params) => {
-            console.log(data);
-        })
-        this.passengerService
-            .getPassenger(1)
-            .subscribe((data: Passenger) => this.passenger = data )
+        .switchMap((data: Passenger) => this.passengerService.getPassenger(data.id))
+        .subscribe((data: Passenger) => this.passenger = data )
     }
 
     onUpdatePassenger(event: Passenger) {
