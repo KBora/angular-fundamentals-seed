@@ -18,7 +18,7 @@ import { Baggage } from '../../models/baggage.interface';
                     required="true"
                     #fullname="ngModel"                    
                     [ngModel]="detail?.fullname">
-                <div *ngIf="fullname.errors?.required" class="error">
+                <div *ngIf="fullname.errors?.required && fullname.dirty" class="error">
                     Passenger name is required
                 </div>
                 {{ fullname.errors | json }}
