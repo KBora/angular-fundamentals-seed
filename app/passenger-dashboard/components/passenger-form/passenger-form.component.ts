@@ -28,7 +28,7 @@ import { Baggage } from '../../models/baggage.interface';
                 <input 
                     type="number"
                     name="id"     
-                    required="true"
+                    required="true"                    
                     #id="ngModel"              
                     [ngModel]="detail?.id">
                     <div *ngIf="id.errors?.required && id.dirty" class="error">
