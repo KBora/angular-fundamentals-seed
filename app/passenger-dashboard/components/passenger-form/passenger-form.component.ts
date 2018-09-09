@@ -32,7 +32,7 @@ import { Baggage } from '../../models/baggage.interface';
                 
             </div> 
 
-            
+
 
             <div>
                 <label>
@@ -69,8 +69,10 @@ import { Baggage } from '../../models/baggage.interface';
 
             </div>
 
-            {{ passengerForm.value | json }}       
-
+            <div>{{ passengerForm.value | json }}</div>
+            <div>Valid: {{ passengerForm.valid | json }}</div>
+            <div>Invalid: {{ passengerForm.invalid | json }}</div>
+       
            </form>
         </div>
     `
