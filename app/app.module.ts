@@ -17,7 +17,7 @@ const routes: Routes = [
   imports: [
     // angular modules
     BrowserModule,
-    RouterModule.forRoot(routes, { useHash: true }),
+    RouterModule.forRoot(routes),
     // custom modules
     PassengerDashboardModule
   ],
